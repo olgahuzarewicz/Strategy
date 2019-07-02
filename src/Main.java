@@ -5,8 +5,22 @@ public class Main {
     }
 
 
-    public int add (int a, int b, Strategy strategy){
-        return strategy.add(a, b);
+    public int addInt(int a, int b) {
+        Strategy s1 = (x, y) -> (x + y);
+
+        return s1.add(a, b);
+    }
+
+    public int addString(int a, int b) {
+        Strategy s1 = (x, y) -> {
+            String x1 = "" + x;
+            String y1 = "" + y;
+            return Integer.valueOf(x1 + y1);
+        };
+
+        return s1.add(a, b);
+    }
 }
 
-}
+
+
